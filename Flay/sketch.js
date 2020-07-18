@@ -77,8 +77,8 @@ function setup(){
 
 function draw(){
   background(225);
-  var hello = text("Score: "+ score, 550,250);
-  hello.depth = ground.depth + 10;
+    text("Score: "+ score, 550,250);
+  
   fontColor = "white";
   rocket.collide(edges);
   if(gameState===PLAY){
@@ -190,6 +190,10 @@ if(frameCount%50===0){
 
 
   drawSprites();
+  textStyle("roboto");
+  textSize(20)
+  text("Score: "+ score, 480,50);
+  
 }
 
 function move(){
@@ -204,17 +208,17 @@ function move(){
 }
 
 function createObstacles1(){
-    var obstacle = createSprite(0,0,1,1);
-    obstacle.x = Math.round(random(50,150));
-    obstacle.y = Math.round(random(50,200));
-    obstacle.addImage("obstacle",obstacle_image);
-    obstacle.scale = 0.07;
-    obstacle.velocityY = 5
-    obstaclesGroup1.add(obstacle);
-    if(frameCount%500===0){
-      obstacle.velocityY = obstacle.velocityY + 5;
-    }
+  var obstacle = createSprite(0,0,1,1);
+  obstacle.x = Math.round(random(50,150));
+  obstacle.y = Math.round(random(50,200));
+  obstacle.addImage("obstacle",obstacle_image);
+  obstacle.scale = 0.07;
+  obstacle.velocityY = 5
+  obstaclesGroup1.add(obstacle);
+  if(frameCount%500===0){
+    obstacle.velocityY = obstacle.velocityY + 5;
   }
+}
 
 
 function createObstacles2(){
